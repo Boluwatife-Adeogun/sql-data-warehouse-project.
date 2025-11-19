@@ -11,20 +11,8 @@ The data architecture for this project follows Medallion Architecture Bronze, Si
 This project involves:
 1.Bronze Layer: Stores raw data as-is from the source systems. Data is ingested from CSV Files into Postgresql Database.
 
-2.Silver Layer
-# Purpose
-	-	Clean and validate data
-	-	Fix nulls and malformed fields
-	-	Standardize formats (dates, product keys, customer IDs)
-	-	Enforce business rules
-	-	Prepare data for dimension modeling
-	-	Strip and standardize product identifiers
-	-	Replace invalid product costs with 0
-	-	Map product categories
-	-	Convert date strings to DATE
-	-	Build product start_date → end_date windows
-	-	Remove duplicates
-  
+2.Silver Layer:  This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
+
 3.Gold Layer: Houses business-ready data modeled into a star schema required for reporting and analytics.
 
 ---
@@ -59,7 +47,9 @@ gold     → dimension & fact tables
  ├── 📁 logs
  ├── 📁 docs
  └── README.md
+ 
 ---
+
 ### ⚙ ETL / ELT Process
 
 Bronze Load
